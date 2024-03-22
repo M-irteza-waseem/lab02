@@ -1,0 +1,58 @@
+﻿@model IEnumerable<HF_super_mart.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Orders</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Required_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shipped_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Store.Store_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Required_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shipped_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Store.Store_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Order_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Order_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Order_id })
+        </td>
+    </tr>
+}
+
+</table>

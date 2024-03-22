@@ -1,0 +1,34 @@
+﻿@model IEnumerable<HF_super_mart.Models.Price>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ALL Prices</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Price_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Price_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Price_Id })
+        </td>
+    </tr>
+}
+
+</table>

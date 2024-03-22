@@ -1,0 +1,59 @@
+﻿@model HF_super_mart.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Required_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Required_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shipped_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shipped_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Store.Store_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Store.Store_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Order_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
